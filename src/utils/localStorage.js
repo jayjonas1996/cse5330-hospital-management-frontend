@@ -8,3 +8,5 @@ class LocalStorage {
         window.localStorage.getItem(key);
     }
 }
+
+export default LocalStorage;

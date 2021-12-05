@@ -2,5 +2,5 @@
 .header {
     height: 50px;
     width: 100%;
-    background-color: #24efb6;
+    background-color: var(--primary-color)
 }
