@@ -1,12 +1,23 @@
 
 class LocalStorage {
-    static save(key, value) {
+    static set(key, value) {
+        console.log(key);
         window.localStorage.setItem(key, value);
     }
 
     static get(key) {
-        window.localStorage.getItem(key);
+        return window.localStorage.getItem(key);
     }
+
+    static getLoggedInUser() {
+        return JSON.parse(LocalStorage.get('user'));
+    }
+
+    static clearLoginInfo() {
+        LocalStorage.removeItem('user');
+        LocalStorage.removeItem('userId');
+    }
+
 }
 
 export default LocalStorage;

@@ -1,0 +1,12 @@
+.login-wrapper {
+    padding-top: 30%;
+    height: 300px;
+    width: 100%;
+    padding-left: 50% - 100px;
+    align-items: left;
+    margin-right: 5px;
+}
+
+span, input, button {
+    margin-top: 10px;
+}

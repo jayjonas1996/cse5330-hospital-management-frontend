@@ -8,7 +8,7 @@ export default class Employee {
             this.LAST_NAME = obj.LAST_NAME;
             this.SEX = obj.SEX;
             this.SALARY = obj.SALARY;
-            this.ADDRESS = this.ADDRESS;
+            this.ADDRESS = obj.ADDRESS;
             this.PHONE_NUMBER = obj.PHONE_NUMBER;
             this.DOB = new Date(obj.DOB);
             this.D_ID = obj.D_ID;
