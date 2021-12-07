@@ -17,4 +17,12 @@ export default class ProjectAPIs {
     static async updatePatientAddress(id, data) {
         return await APIHandler.fetchPost(`/query/patient/${id}`, data);
     }
+
+    static async getReportDepartmentSexRollup() {
+        return await APIHandler.fetchGet('/report/department_sex_rollup'); // TODO: change api and method name to more accurate
+    }
+
+    static async getTotalAllTimeRevenueByDepartmentAndRoomCube() {
+        return await APIHandler.fetchGet('/report/revenue_department_room_cube');
+    }
 }

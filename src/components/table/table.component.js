@@ -4,11 +4,18 @@ import './table.component.css'
 
 export default class Table extends Component {
     static propTypes = {
-        data: PropTypes.array.isRequired
-      };
+        data: PropTypes.array.isRequired,
+        hasTotal: PropTypes.bool
+    };
+
+    getTotalElement() {
+        return (<span className="total">Total</span>)
+    }
 
     render() {
-        const { props: { data } } = this;
+        const { props: { data, hasTotal } } = this;
+        console.log(hasTotal);
+
         let headers = [];
         let elements = []
 
@@ -21,7 +28,7 @@ export default class Table extends Component {
         for (var i = 1; i < data.length; i++) {
             let cells = [];
             for(var j=0; j < data[i].length; j++) {
-                cells.push(<td key={`body-cells-${i}-${j}`}>{data[i][j]}</td>)
+                cells.push(<td key={`body-cells-${i}-${j}`}>{data[i][j] !== null ? data[i][j] : (hasTotal ? this.getTotalElement() : '-')}</td>)
             }
             elements.push(<tr key={`value-row-${i}`}>{cells}</tr>);
         }

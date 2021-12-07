@@ -7,6 +7,9 @@ import Tabs from './components/tabs/tabs.component'
 import Report1 from './components/report1/report1.component';
 import Report2 from './components/report2/report2.component';
 
+import ReportY from './components/reportY/reporty.component';
+import ReportZ from './components/reportZ/reportz.component';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -30,6 +33,12 @@ class App extends Component {
               </div>
               <div label="#3: aggregate queries">
                 In progress
+              </div>
+              <div label="#Y: Report Y">
+                <ReportY></ReportY>
+              </div>
+              <div label="#Z: Report Z">
+                <ReportZ></ReportZ>
               </div>
           </Tabs>
           ) : (<LoginComponent></LoginComponent>)}

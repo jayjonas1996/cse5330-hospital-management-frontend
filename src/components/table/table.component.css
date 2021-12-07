@@ -1,3 +1,8 @@
 td, th {
     text-align: justify;
+    padding: 2px;
+}
+
+.total {
+    font-weight: bold;
 }

@@ -26,13 +26,13 @@ export default class Report1 extends Component {
     render() {
         return (
             <div className="report-wrapper">
-                <div className="menu-wrapper">
-                    <select name="select" onChange={(e) => this.registerChange(e)} defaultValue={this.state.selectedType}>
+                <div className="menu-wrapper">Get list of employees in
+                    <select name="select" onChange={(e) => this.registerChange(e)} defaultValue={this.state.selectedType} style={{marginLeft: 5}}>
                         <option value={"doctor"}>Doctor</option>
                         <option value={"nurse"} >Nurse</option>
                         <option value={"staff"} >Staff</option>
                         <option value={"trustee"} >Trustee</option>
-                    </select>
+                    </select> category.
                     <button style={{marginLeft: 10}} onClick={(e) => this.execute()}>Submit</button>
                 </div>
                 <div className="results-wrapper">

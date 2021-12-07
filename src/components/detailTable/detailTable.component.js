@@ -46,7 +46,7 @@ export default class DetailTable extends Component {
             if (editable.indexOf(key) > -1) {
                 elements.push(<tr key={`row-${key}`}><td key={'name-' + key}>{key}</td><td key={'value-' + key}><input onChange={(evt) => this.addressChanged(evt)} style={{width: 300}} type='text' value={this.state.address || '-'}></input></td></tr>)
             } else {
-                elements.push(<tr key={`row-${key}`}><td key={'name-' + key}>{key}</td ><td key={'value-' + key}>{data[key] || '-'}</td></tr>)
+                elements.push(<tr key={`row-${key}`}><td key={'name-' + key}>{key}</td><td key={'value-' + key}>{data[key] || '-'}</td></tr>)
             }
         }
 
