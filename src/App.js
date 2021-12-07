@@ -4,6 +4,7 @@ import HeaderComponent from './components/header/header.component';
 import LoginComponent from './components/login/login.component';
 import LocalStorage from './utils/localStorage';
 import Tabs from './components/tabs/tabs.component'
+import Report1 from './components/report1/report1.component';
 
 class App extends Component {
   constructor(props) {
@@ -18,15 +19,15 @@ class App extends Component {
         <div className='main-content'>
           { this.user ? (
             <Tabs>
-              <div label="Gator">
-                See ya later, <em>Alligator</em>!
+
+              <div label="Report #1: Relation">
+                <Report1></Report1>
               </div>
-              <div label="Croc">
-                After 'while, <em>Crocodile</em>!
+
+              <div label="Report #2">
+                <div>anything <br></br>After 'while, <em>Crocodile</em>!</div>
               </div>
-              <div label="Sarcosuchus">
-                Nothing to see here, this tab is <em>extinct</em>!
-              </div>
+
           </Tabs>
           ) : (<LoginComponent></LoginComponent>)}
         </div>
