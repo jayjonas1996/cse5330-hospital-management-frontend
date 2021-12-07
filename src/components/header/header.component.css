@@ -5,8 +5,9 @@
     background-color: var(--primary-color);
     display: flex;
     justify-content: space-between;
+    padding-left: 10px;
 }
 
-span{
-    margin-left: 10px;;
+.logout-wrapper {
+    margin-right: 11px;
 }

@@ -7,30 +7,28 @@ export default class Table extends Component {
         data: PropTypes.array.isRequired
       };
 
-
-    constructor(props) {
-        super(props);
-    }
     render() {
         const { props: { data } } = this;
         let headers = [];
         let elements = []
 
-        for (var i=0; i < data[0].length; i++) {
-            headers.push(<th><td>{data[0][i]}</td></th>)
+        var header_cells = [];
+        for (var k=0; k < data[0].length; k++) {
+            header_cells.push(<th key={k}>{data[0][k]}</th>);
         }
+        headers.push(<tr>{header_cells}</tr>);
  
         for (var i = 1; i < data.length; i++) {
             let cells = [];
             for(var j=0; j < data[i].length; j++) {
-                cells.push(<td>{data[i][j]}</td>)
+                cells.push(<td key={`${i}-${j}`}>{data[i][j]}</td>)
             }
-            elements.push(<tr key={`${i}-${j}`}>{cells}</tr>);
+            elements.push(<tr>{cells}</tr>);
         }
 
         return (
             <div>
-                <table>
+                <table className='table'>
                     <thead>
                         {headers}
                     </thead>

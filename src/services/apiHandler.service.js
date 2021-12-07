@@ -10,20 +10,21 @@ export default class APIHandler {
             }).then(res => res.json())
             .then(
                 (result) => { resolve(result); },
-                (error) => { console.error(error); }
+                (error) => { console.error(error); reject(error); }
             );
         });
     }
 
     static async fetchPost(url, data) {
-        await fetch(APIHandler.host + url, { 
-            method: 'GET', 
-            headers: { 'Content-Type': 'application/json' }, 
-            body: JSON.stringify(data)
-        }).then(res => res.json())
-        .then(
-            (result) => { return result; },
-            (error) => { console.error(error); }
-        );
+        return new Promise((resolve, reject) => {
+            fetch(APIHandler.host + url, {
+                method: 'POST', 
+                headers: { 'Content-Type': 'application/json' }, 
+                body: JSON.stringify(data)
+            }).then(res => res.json())
+            .then(
+                (result) => { resolve(result); },
+                (error) => { console.error(error); reject(error); });
+            });
     }
 }

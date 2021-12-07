@@ -10,10 +10,6 @@ export default class Report1 extends Component {
         results: null
     }
 
-    constructor(props) {
-        super(props);
-    }
-
     registerChange(event) {
         this.setState({
             selectedType: event.target.value
@@ -22,7 +18,6 @@ export default class Report1 extends Component {
 
     async execute() {
         const result = await ProjectAPIs.getAllEmployeesByType(this.state.selectedType);
-        console.log(convertToTableData(result));
         this.setState({
             results: convertToTableData(result)
         })
@@ -36,6 +31,7 @@ export default class Report1 extends Component {
                         <option value={"doctor"}>Doctor</option>
                         <option value={"nurse"} >Nurse</option>
                         <option value={"staff"} >Staff</option>
+                        <option value={"trustee"} >Trustee</option>
                     </select>
                     <button style={{marginLeft: 10}} onClick={(e) => this.execute()}>Submit</button>
                 </div>

@@ -5,6 +5,7 @@ import LoginComponent from './components/login/login.component';
 import LocalStorage from './utils/localStorage';
 import Tabs from './components/tabs/tabs.component'
 import Report1 from './components/report1/report1.component';
+import Report2 from './components/report2/report2.component';
 
 class App extends Component {
   constructor(props) {
@@ -20,12 +21,12 @@ class App extends Component {
           { this.user ? (
             <Tabs>
 
-              <div label="Report #1: Relation">
+              <div label="#1: Relation">
                 <Report1></Report1>
               </div>
 
-              <div label="Report #2">
-                <div>anything <br></br>After 'while, <em>Crocodile</em>!</div>
+              <div label="#2: Update">
+                <Report2></Report2>
               </div>
 
           </Tabs>

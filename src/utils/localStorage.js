@@ -1,7 +1,6 @@
 
 class LocalStorage {
     static set(key, value) {
-        console.log(key);
         window.localStorage.setItem(key, value);
     }
 
@@ -14,8 +13,7 @@ class LocalStorage {
     }
 
     static clearLoginInfo() {
-        LocalStorage.removeItem('user');
-        LocalStorage.removeItem('userId');
+        window.localStorage.clear()
     }
 
 }
