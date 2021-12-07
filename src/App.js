@@ -28,7 +28,9 @@ class App extends Component {
               <div label="#2: Update">
                 <Report2></Report2>
               </div>
-
+              <div label="#3: aggregate queries">
+                In progress
+              </div>
           </Tabs>
           ) : (<LoginComponent></LoginComponent>)}
         </div>

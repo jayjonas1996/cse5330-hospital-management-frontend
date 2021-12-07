@@ -14,16 +14,16 @@ export default class Table extends Component {
 
         var header_cells = [];
         for (var k=0; k < data[0].length; k++) {
-            header_cells.push(<th key={k}>{data[0][k]}</th>);
+            header_cells.push(<th key={'header-cells' + k}>{data[0][k]}</th>);
         }
-        headers.push(<tr>{header_cells}</tr>);
+        headers.push(<tr key={'header'}>{header_cells}</tr>);
  
         for (var i = 1; i < data.length; i++) {
             let cells = [];
             for(var j=0; j < data[i].length; j++) {
-                cells.push(<td key={`${i}-${j}`}>{data[i][j]}</td>)
+                cells.push(<td key={`body-cells-${i}-${j}`}>{data[i][j]}</td>)
             }
-            elements.push(<tr>{cells}</tr>);
+            elements.push(<tr key={`value-row-${i}`}>{cells}</tr>);
         }
 
         return (

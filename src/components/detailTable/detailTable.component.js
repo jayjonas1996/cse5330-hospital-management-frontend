@@ -15,8 +15,8 @@ export default class DetailTable extends Component {
         editable: PropTypes.array
     };
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({ address: nextProps.data['ADDRESS'] });  
+    static getDerivedStateFromProps(props, state) {
+        return { addres: props.data['ADDRESS']}
       }
 
     addressChanged(event) {
@@ -35,7 +35,7 @@ export default class DetailTable extends Component {
 
     update() {
         if (!this.state.errors.address) {
-            this.props.callback(this.state.address)
+            this.props.callback(this.state.address);
         }
     }
 
@@ -44,9 +44,9 @@ export default class DetailTable extends Component {
         const { props: { data, editable } } = this;
         for(var key of Object.keys(data)) {
             if (editable.indexOf(key) > -1) {
-                elements.push(<tr><td key={'name-' + key}>{key}</td><td key={'value-' + key}><input onChange={(evt) => this.addressChanged(evt)} style={{width: 300}} type='text' value={this.state.address || '-'}></input></td></tr>)
+                elements.push(<tr key={`row-${key}`}><td key={'name-' + key}>{key}</td><td key={'value-' + key}><input onChange={(evt) => this.addressChanged(evt)} style={{width: 300}} type='text' value={this.state.address || '-'}></input></td></tr>)
             } else {
-                elements.push(<tr><td key={'name-' + key}>{key}</td ><td key={'value-' + key}>{data[key] || '-'}</td></tr>)
+                elements.push(<tr key={`row-${key}`}><td key={'name-' + key}>{key}</td ><td key={'value-' + key}>{data[key] || '-'}</td></tr>)
             }
         }
 
