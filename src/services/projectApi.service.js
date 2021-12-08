@@ -19,10 +19,18 @@ export default class ProjectAPIs {
     }
 
     static async getReportDepartmentSexRollup() {
-        return await APIHandler.fetchGet('/report/department_sex_rollup'); // TODO: change api and method name to more accurate
+        return await APIHandler.fetchGet('/report/department_sex_rollup');
     }
 
     static async getTotalAllTimeRevenueByDepartmentAndRoomCube() {
         return await APIHandler.fetchGet('/report/revenue_department_room_cube');
+    }
+
+    static async getBusiestDepartmentBetweenDates(data) {
+        return await APIHandler.fetchPost('/report/most_busy_department', data);
+    }
+
+    static async getPatientsCountByInsuranceCompanyForBloodGroup(data) {
+        return await APIHandler.fetchPost('/report/patient_count_by_insurance_company_and_bloog_group', data);
     }
 }

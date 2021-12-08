@@ -24,7 +24,7 @@ export default class LoginComponent extends Component {
             LocalStorage.set('user', JSON.stringify(result[0]));
             window.location.reload();
         } else {
-            const errors = { employeeId: 'Employee does not exists'}
+            const errors = { employeeId: 'Employee does not exist'}
             this.setState({errors})
         }
     }

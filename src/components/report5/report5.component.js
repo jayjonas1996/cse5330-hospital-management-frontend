@@ -3,7 +3,7 @@ import ProjectAPIs from "../../services/projectApi.service";
 import Table from "../table/table.component";
 import { convertToTableData } from "../../utils/utils";
 
-export default class ReportZ extends Component { // TODO: Rename to appropriate number later 
+export default class report5 extends Component {
 
     state = {
         data: null
@@ -12,7 +12,6 @@ export default class ReportZ extends Component { // TODO: Rename to appropriate 
     submit() {
         ProjectAPIs.getReportDepartmentSexRollup().then((result) => {
             if (result.rows.length > 0) {
-                console.log(result);
                 this.setState({ data: convertToTableData(result) });
             }
         })

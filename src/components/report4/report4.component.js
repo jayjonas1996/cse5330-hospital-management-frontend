@@ -3,7 +3,7 @@ import ProjectAPIs from "../../services/projectApi.service";
 import { convertToTableData } from "../../utils/utils";
 import Table from "../table/table.component";
 
-export default class ReportY extends Component {
+export default class Report4 extends Component {
     state = {
         data: null
     }
@@ -19,7 +19,7 @@ export default class ReportY extends Component {
     render() {
         return (
             <div>
-                <button onClick={() => this.submit()}>Generate report</button> to get revenue by department and room using roll up clause
+                <button onClick={() => this.submit()}>Generate report</button> to get revenue by department and room using cube clause
                 <div>
                     {this.state.data && <Table data={this.state.data} hasTotal={true}></Table>}
                 </div>

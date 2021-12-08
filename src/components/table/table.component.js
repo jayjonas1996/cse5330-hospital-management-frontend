@@ -14,7 +14,6 @@ export default class Table extends Component {
 
     render() {
         const { props: { data, hasTotal } } = this;
-        console.log(hasTotal);
 
         let headers = [];
         let elements = []

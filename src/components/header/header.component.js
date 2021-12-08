@@ -18,7 +18,7 @@ class HeaderComponent extends Component {
         return <div className="header">
             { this.user ? (
                 <span>
-                    <b>Welcome {this.user.FIRST_NAME + ' ' + this.user.LAST_NAME}</b>
+                    <b>Welcome, {this.user.FIRST_NAME + ' ' + this.user.LAST_NAME}</b>
                 </span>
             ) : null }
             { this.user ? (

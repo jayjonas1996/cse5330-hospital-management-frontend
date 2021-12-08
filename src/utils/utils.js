@@ -2,6 +2,10 @@ module.exports = {
     convertToLocalTimeZone(date) {
         return date.split('T')[0] + ' ' + new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2];
     },
+    convertDateToString(date) {
+        // MM/DD/YYYY
+        return `${date.getFullYear().toString().padStart(4, 0)}/${(date.getMonth() + 1).toString().padStart(2, 0)}/${date.getDate().toString().padStart(2, 0)}`
+    },
     convertToTableData(data) {
         let headers = []
         let rows = []
@@ -19,7 +23,4 @@ module.exports = {
         let finalData = [headers].concat(rows)
         return finalData;
     }
-//     loggedInUser() {
-//         return new E
-//     }
 }
