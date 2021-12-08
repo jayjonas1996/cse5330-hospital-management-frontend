@@ -26,7 +26,6 @@ export default class Report3 extends Component {
 
     setEndDate(d) {
         this.end_date = d;
-        const date = convertDateToString(d);
     }
 
     submit() {
@@ -51,7 +50,7 @@ export default class Report3 extends Component {
         } else {
             let errors = this.state.errors;
             if (this.start_date === null || this.start_date === undefined || this.start_date === '' ||
-            this.end_date === null || this.end_date ===undefined || this.end_date == '') {
+            this.end_date === null || this.end_date ===undefined || this.end_date === '') {
                 errors.dates = 'Dates cannot be empty';
             } else if (this.start_date > this.end_date) {
                 errors.dates = 'Start date cannot be further than end date'
