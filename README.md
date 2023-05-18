@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The repository for the NodeJS backend of this project can be found here: https://github.com/jayjonas1996/cse5330-hospital-management-backend
+
 ## Available Scripts
 
 In the project directory, you can run:
